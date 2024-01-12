@@ -28,18 +28,13 @@ class FreelancerServiceTest {
 
         Assertions.assertEquals(expected, actual);
 
-
     }
-
 
     @ParameterizedTest
-    @CsvFileSource(resources = "test_data.csv")
+    @CsvFileSource(files = "src/test/resources/test_data.csv")
     public void testWithParams(int income, int expenses, int threshold, int expected) {
         FreelancerService service = new FreelancerService();
-
         int actual = service.calculate(income, expenses, threshold);
-
         Assertions.assertEquals(expected, actual);
     }
-
-    }
+}
